@@ -10,8 +10,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{1140CB07-0787-9EFF-782E-7AF22EB3FC0B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -63,8 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Tile.cs" />
+    <Compile Include="Assets\Scripts\TileManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/s199083/Simurdak_2d_Dungeon/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
