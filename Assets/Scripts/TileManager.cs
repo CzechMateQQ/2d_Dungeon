@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    [SerializeField]
-    Transform[] cells;
+    public Tile[] cells;
 
     [HideInInspector]
     public int xSize = 30;
@@ -15,7 +14,7 @@ public class TileManager : MonoBehaviour
     [SerializeField]
     Transform temp;
 
-    void PopArray()
+    void CreateArray()
     {
         Sort(0, cells.Length, 0);
 
@@ -24,22 +23,22 @@ public class TileManager : MonoBehaviour
             int startIdx = x;           
             int endIdx = x + ySize;
 
-            Debug.LogFormat("{0}:{1}", startIdx, endIdx);
+            //Debug.LogFormat("{0}:{1}", startIdx, endIdx);
 
             Sort(startIdx, endIdx, 1);
         }
 
-        for(int i = 0; i < cells.Length; ++i)
-        {
-            cells[i].parent = temp;
-            cells[i].transform.SetSiblingIndex(i);
-            cells[i].name = i.ToString();
-        }
+        //for(int i = 0; i < cells.Length; ++i)
+        //{
+        //    cells[i].parent = temp;
+        //    cells[i].transform.SetSiblingIndex(i);
+        //    cells[i].name = i.ToString();
+        //}
     }
 
     private void Sort(int startIdx, int endIdx, int dimension)
     {
-        Transform tmp;
+        Tile tmp;
 
         for (int i = startIdx; i < endIdx; ++i)
         {
@@ -58,7 +57,7 @@ public class TileManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PopArray();
+        CreateArray();
     }
 
     // Update is called once per frame
